@@ -1,6 +1,5 @@
 import java.time.LocalDate;
 
-
 public class Book {
 	
 	private String title; private String author;

@@ -14,6 +14,12 @@ public class Library {
 	}
 	
 	public void addBook(Book book) {
+		for(int i = 0; i < numBooks; i++) {
+			if(books.get(i).equals(book)) {
+				System.out.println("Error: Book already exists!");
+				return;
+			}
+		}
 		books.add(book);
 		numBooks++;
 	}

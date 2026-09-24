@@ -1,5 +1,9 @@
 import java.util.ArrayList;
-
+/*
+ * Author: Alexa Wu
+ * Class: CS-49J Section 1
+ * Date: 9/23/2026
+ */
 public class Library {
 	private ArrayList<Book> books;
 	private int numBooks;
@@ -22,8 +26,10 @@ public class Library {
 	}
 	
 	public Book findBookByTitle(String title) {
+		String titleLower = title.toLowerCase();
+		
 		for(int i = 0; i < numBooks; i++) {
-			if(title.toLowerCase().equals(books.get(i).getTitle().toLowerCase())) {
+			if(titleLower.equals(books.get(i).getTitle().toLowerCase())) {
 				return books.get(i);
 			}
 		}
@@ -39,5 +45,17 @@ public class Library {
 		}
 		
 		return false;
+	}
+	
+	ArrayList<Book> findBooksByAuthor(String author) {
+		String authorLower = author.toLowerCase();
+		ArrayList<Book> booksByAuthor = new ArrayList<>();
+		
+		for(int i = 0; i < numBooks; i++) {
+			if(authorLower.equals(books.get(i).getAuthor().toLowerCase())) {
+				booksByAuthor.add(books.get(i));
+			}
+		}
+		return booksByAuthor;
 	}
 }

@@ -15,6 +15,7 @@ public class Library {
 	}
 	
 	public void displayAllBooks() {
+		System.out.println("Books in Library:");
 		for(Book book : books) {
 			System.out.println(book);
 		}
@@ -27,5 +28,16 @@ public class Library {
 			}
 		}
 		return null;
+	}
+	
+	public boolean removeBookByTitle(String title) {
+		Book book = findBookByTitle(title);
+		
+		if(book != null) {
+			numBooks--;
+			return books.remove(book);
+		}
+		
+		return false;
 	}
 }

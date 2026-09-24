@@ -1,5 +1,9 @@
 import java.time.LocalDate;
-
+/*
+ * Author: Alexa Wu
+ * Class: CS-49J Section 1
+ * Date: 9/23/2026
+ */
 public class Book {
 	
 	private String title; private String author;
@@ -42,5 +46,16 @@ public class Book {
 	@Override
 	public String toString() {
 		return "Book [Title=" + title + ", Author=" + author + ", Publication=" + publicationDate + "]";
+	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Book book = (Book) obj;
+		if(this.getTitle() == book.getTitle()) {
+			if(this.getAuthor().equals(book.getAuthor())) {
+				return true;
+			}
+		}
+		return false;
 	}
 }

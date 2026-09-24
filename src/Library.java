@@ -58,4 +58,8 @@ public class Library {
 		}
 		return booksByAuthor;
 	}
+	
+	public int getTotalBookCount() {
+		return numBooks;
+	}
 }
